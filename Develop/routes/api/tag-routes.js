@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Tag, Product, ProductTag } = require("../../models");
 
 // The `/api/tags` endpoint
-
+//http://localhost:3001/api/tags/
 router.get("/", async (req, res) => {
   // find all tags
   try {
@@ -14,6 +14,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+//http://localhost:3001/api/tags/:id
 router.get("/:id", async (req, res) => {
   // find a single tag by its `id`
   try {
@@ -27,6 +28,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+//http://localhost:3001/api/tags/
 router.post("/", async (req, res) => {
   // create a new tag
   try {
@@ -38,6 +40,7 @@ router.post("/", async (req, res) => {
 });
 
 // update a tag's name by its `id` value
+//http://localhost:3001/api/tags/:id
 router.put("/:id", async (req, res) => {
   try {
     const [rowsAffected, [updatedTag]] = await Tag.update(
@@ -58,6 +61,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+//http://localhost:3001/api/tags/:id
 router.delete("/:id", async (req, res) => {
   // delete on tag by its `id` value
   try {
